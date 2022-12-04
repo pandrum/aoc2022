@@ -1,5 +1,8 @@
 ﻿List<string> lines = System.IO.File.ReadLines(@"input.txt").ToList();
 
+// 1000 lines in input
+// System.Console.WriteLine(lines.Count);
+
 bool match = false;
 int counter = 0;
 int overlaps = 0;
@@ -39,26 +42,17 @@ foreach (string item in lines)
         }
     }
 
-
-    if (Convert.ToInt32(first) <= Convert.ToInt32(third) && Convert.ToInt32(second) >= Convert.ToInt32(fourth))
+    if ((Convert.ToInt32(first) < Convert.ToInt32(third) && Convert.ToInt32(first) < Convert.ToInt32(fourth) && Convert.ToInt32(second) < Convert.ToInt32(third) && Convert.ToInt32(second) < Convert.ToInt32(fourth))
+    || (Convert.ToInt32(first) > Convert.ToInt32(third) && Convert.ToInt32(first) > Convert.ToInt32(fourth) && Convert.ToInt32(second) > Convert.ToInt32(third) && Convert.ToInt32(second) > Convert.ToInt32(fourth)))
     {
-        System.Console.WriteLine("Första paret innefattar andra paret");
         match = true;
-
+        System.Console.WriteLine("No overlap");
     }
 
-    if (Convert.ToInt32(third) <= Convert.ToInt32(first) && Convert.ToInt32(fourth) >= Convert.ToInt32(second))
-    {
-        System.Console.WriteLine("Andra paret innefattar första paret");
-        match = true;
-
-    }
-
-    System.Console.WriteLine(first);
-    System.Console.WriteLine(second);
-    System.Console.WriteLine(third);
-    System.Console.WriteLine(fourth);
-
+    // System.Console.WriteLine(first);
+    // System.Console.WriteLine(second);
+    // System.Console.WriteLine(third);
+    // System.Console.WriteLine(fourth);
 
     if (match)
     {
@@ -71,11 +65,7 @@ foreach (string item in lines)
     third = "";
     fourth = "";
     match = false;
-    System.Console.WriteLine("------------------end------------------");
+    // System.Console.WriteLine("------------------end------------------");
 }
 
 System.Console.WriteLine(overlaps);
-
-
-
-//626 too high
