@@ -49,10 +49,10 @@ foreach (string item in lines)
         System.Console.WriteLine("No overlap");
     }
 
-    // System.Console.WriteLine(first);
-    // System.Console.WriteLine(second);
-    // System.Console.WriteLine(third);
-    // System.Console.WriteLine(fourth);
+    System.Console.WriteLine(first);
+    System.Console.WriteLine(second);
+    System.Console.WriteLine(third);
+    System.Console.WriteLine(fourth);
 
     if (match)
     {
@@ -65,11 +65,7 @@ foreach (string item in lines)
     third = "";
     fourth = "";
     match = false;
-    // System.Console.WriteLine("------------------end------------------");
+    System.Console.WriteLine("------------------end------------------");
 }
 
 System.Console.WriteLine(overlaps);
-
-
-
-//626 too high
