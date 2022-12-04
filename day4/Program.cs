@@ -39,26 +39,22 @@ foreach (string item in lines)
         }
     }
 
-
     if (Convert.ToInt32(first) <= Convert.ToInt32(third) && Convert.ToInt32(second) >= Convert.ToInt32(fourth))
     {
         System.Console.WriteLine("Första paret innefattar andra paret");
         match = true;
-
     }
 
     if (Convert.ToInt32(third) <= Convert.ToInt32(first) && Convert.ToInt32(fourth) >= Convert.ToInt32(second))
     {
         System.Console.WriteLine("Andra paret innefattar första paret");
         match = true;
-
     }
 
     System.Console.WriteLine(first);
     System.Console.WriteLine(second);
     System.Console.WriteLine(third);
     System.Console.WriteLine(fourth);
-
 
     if (match)
     {
@@ -74,8 +70,4 @@ foreach (string item in lines)
     System.Console.WriteLine("------------------end------------------");
 }
 
-System.Console.WriteLine(overlaps);
-
-
-
-//626 too high
+System.Console.WriteLine($"Containing: {overlaps}");
