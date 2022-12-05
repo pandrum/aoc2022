@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = day1
-build_property.ProjectDir = c:\Users\simpa\source\repos\aoc2022\day1\
+build_property.ProjectDir = /Users/sbf/Projects/aoc2022/day1/
