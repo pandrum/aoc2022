@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VbCyP5vYEMOBq78Hf5cJvRP+IMvnUlAQnqOYd8zc+DGEND099z+R+sVPMyWoz4ml5MbLysC+Fgg0+8fomO+kuQ==",
+  "dgSpecHash": "JpGAqpM2sWwDrqi0RiwRrx3LPzEJtsO/R6HGjpT+Ghraz/U2qyUsza9DbMt8dERKnAsqV1nCYJya3kXbxr241A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\simpa\\source\\repos\\aoc2022\\day2\\day2.csproj",
+  "projectFilePath": "/Users/sbf/Projects/aoc2022/day2/day2.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
