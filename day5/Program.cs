@@ -12,8 +12,10 @@ Dictionary<int, string> stacks = new Dictionary<int, string>() {
     { 8, "JPD"},
     { 9, "VWNCD"}};
 
+
 foreach (var item in lines)
 {
+
     int amount = 0;
     int from = 0;
     int to = 0;
@@ -24,14 +26,18 @@ foreach (var item in lines)
     from = Int32.Parse(splitString[3]);
     to = Int32.Parse(splitString[5]);
 
-    for (int i = 0; i < amount; i++)
-    {
-        stacks[to] = stacks[from].ToString().Substring(0, 1) + stacks[to];
-        stacks[from] = stacks[from].ToString().Substring(1);
-    }
+    // for (int i = 0; i < amount; i++)
+    // {
+    //     stacks[to] = stacks[from].ToString().Substring(0, 1) + stacks[to];
+    //     stacks[from] = stacks[from].ToString().Substring(1);
+    // }
+
+    stacks[to] = stacks[from].ToString().Substring(0, amount) + stacks[to];
+    stacks[from] = stacks[from].ToString().Substring(amount);
+
 }
 
 foreach (var item in stacks)
 {
-    System.Console.WriteLine($"Column: {item.Key} Stacks: {item.Value.ToString().Substring(0, 1)}");
+    System.Console.WriteLine(item.Value.Substring(0, 1));
 }
