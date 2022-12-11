@@ -5,7 +5,7 @@ int start = 0;
 for (int i = 0; i < stream.Length; i++)
 {
 
-    string slice = stream.Substring(start, 4);
+    string slice = stream.Substring(start, 14);
     System.Console.WriteLine($"Slice: {slice}");
 
     bool unique = true;
@@ -28,7 +28,7 @@ for (int i = 0; i < stream.Length; i++)
 
     if (unique)
     {
-        System.Console.WriteLine($"Answer: {start + 4}");
+        System.Console.WriteLine($"Answer: {start + 14}");
         break;
     }
 
