@@ -1,14 +1,15 @@
 ﻿List<string> inputs = System.IO.File.ReadLines(@"input.txt").ToList();
 List<string> history = new List<string>();
 
-foreach (var input in inputs)
+for (int i = 0; i < inputs.Count; i++)
 {
-    long fileSize = 0;
+    long rootDirSize = 0;
+    long currentDirSize = 0;
 
     // if input starts with cd
-    if (input.StartsWith("$ cd"))
+    if (inputs[i].StartsWith("$ cd"))
     {
-        string[] dirs = input.Split(" ");
+        string[] dirs = inputs[i].Split(" ");
         string dirname = dirs[2];
 
         if (dirname.Equals(".."))
@@ -21,12 +22,25 @@ foreach (var input in inputs)
         }
     }
 
-    if (Char.IsDigit(input[0]))
+
+    // if input starts with ls
+    if (inputs[i].Equals("$ ls"))
     {
-        string[] files = input.Split(" ");
-        int size = Convert.ToInt32(files[0]);
-        fileSize += size;
-        System.Console.WriteLine($"File size of {files[1]} in {history.Last()} is {size}");
+        for (int j = i + 1; j < inputs.Count; j++)
+        {
+            if (inputs[j].StartsWith("$"))
+            {
+                break;
+            }
+
+            if (Char.IsDigit(inputs[j][0]))
+            {
+                string[] files = inputs[j].Split(" ");
+                int size = Convert.ToInt32(files[0]);
+                currentDirSize += size;
+            }
+        }
+
+        System.Console.WriteLine($"{history.Last()} is {currentDirSize} big");
     }
 }
-System.Console.WriteLine(history.Count);
