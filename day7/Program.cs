@@ -3,14 +3,15 @@ List<string> history = new List<string>();
 
 for (int i = 0; i < inputs.Count; i++)
 {
-    long rootDirSize = 0;
     long currentDirSize = 0;
+    string[] dirs;
+    string dirname;
 
     // if input starts with cd
     if (inputs[i].StartsWith("$ cd"))
     {
-        string[] dirs = inputs[i].Split(" ");
-        string dirname = dirs[2];
+        dirs = inputs[i].Split(" ");
+        dirname = dirs[2];
 
         if (dirname.Equals(".."))
         {
@@ -21,7 +22,6 @@ for (int i = 0; i < inputs.Count; i++)
             history.Add(dirname);
         }
     }
-
 
     // if input starts with ls
     if (inputs[i].Equals("$ ls"))
@@ -39,8 +39,12 @@ for (int i = 0; i < inputs.Count; i++)
                 int size = Convert.ToInt32(files[0]);
                 currentDirSize += size;
             }
+
         }
 
-        System.Console.WriteLine($"{history.Last()} is {currentDirSize} big");
+        System.Console.WriteLine($"Adding {history.Last()} with size {currentDirSize} to list. Level is {history.Count}");
+
+
+        System.Console.WriteLine("===================");
     }
 }
