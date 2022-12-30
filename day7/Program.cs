@@ -64,7 +64,6 @@ foreach (var input in inputs)
             var dirSplit = dir.Split("/").ToList();
             dirSplit.RemoveAt(dirSplit.Count - 1);
             dir = string.Join("/", dirSplit);
-
         }
 
     }
