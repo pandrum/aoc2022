@@ -50,9 +50,9 @@ foreach (var input in inputs)
         }
 
         string dir = createCurrentDirectory();
+
         while (dir.Contains("/"))
         {
-            System.Console.WriteLine(dir);
             if (!folders.ContainsKey(dir))
             {
                 folders[dir] = 0;
@@ -69,14 +69,34 @@ foreach (var input in inputs)
     }
 }
 
+long diskSpace = 70000000;
+long updateSize = 30000000;
 
-long total = 0;
+//used space 42080344
+long usedSpace = 0;
+
 foreach (var item in folders)
 {
-    if (item.Value <= 100000)
-    {
-        total += item.Value;
-    }
-    System.Console.WriteLine($"{item.Key}: {item.Value}");
+    usedSpace += item.Value;
 }
-System.Console.WriteLine(total);
+//unused space 27919656
+long unUsedSpace = (diskSpace - usedSpace);
+
+//needed space for update 2080344
+long neededSpace = (updateSize - unUsedSpace);
+System.Console.WriteLine($"Disk space: {diskSpace}");
+System.Console.WriteLine($"Used space: {usedSpace}");
+System.Console.WriteLine($"Unused space: {unUsedSpace}");
+System.Console.WriteLine($"Needed space for update: {neededSpace}");
+
+var list = new List<long>();
+
+foreach (var item in folders)
+{
+    if (item.Value >= 2080344)
+    {
+        System.Console.WriteLine($"{item.Key}: {item.Value}");
+        list.Add(item.Value);
+    }
+}
+System.Console.WriteLine(list.Min());
