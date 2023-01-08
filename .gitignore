@@ -475,3 +475,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+day1/obj/Debug/net7.0/day1.csproj.AssemblyReference.cache
+day1/obj/Debug/net7.0/day1.csproj.AssemblyReference.cache
+day2/obj/Debug/net7.0/day2.csproj.AssemblyReference.cache
+day3/obj/Debug/net7.0/day3.csproj.AssemblyReference.cache
+day4/obj/Debug/net7.0/day4.csproj.AssemblyReference.cache
